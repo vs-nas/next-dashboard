@@ -19,12 +19,12 @@ export default function TransactionsLoading() {
                     <div className="flex items-center gap-4">
                         <Skeleton className="h-9 w-9 rounded-full" />
                         <div className="grid gap-1">
-                            <p className="text-sm font-medium leading-none">
+                            <div className="text-sm font-medium leading-none">
                                 <Skeleton className="h-4 w-[120px] rounded" />
-                            </p>
-                            <p className="text-sm text-muted-foreground">
+                            </div>
+                            <div className="text-sm text-muted-foreground">
                                 <Skeleton className="h-4 w-[150px] rounded" />
-                            </p>
+                            </div>
                         </div>
                         <div className="ml-auto font-medium">
                             <Skeleton className="h-4 w-[50px] rounded" />
@@ -33,12 +33,12 @@ export default function TransactionsLoading() {
                     <div className="flex items-center gap-4">
                         <Skeleton className="h-9 w-9 rounded-full" />
                         <div className="grid gap-1">
-                            <p className="text-sm font-medium leading-none">
+                            <div className="text-sm font-medium leading-none">
                                 <Skeleton className="h-4 w-[120px] rounded" />
-                            </p>
-                            <p className="text-sm text-muted-foreground">
+                            </div>
+                            <div className="text-sm text-muted-foreground">
                                 <Skeleton className="h-4 w-[150px] rounded" />
-                            </p>
+                            </div>
                         </div>
                         <div className="ml-auto font-medium">
                             <Skeleton className="h-4 w-[50px] rounded" />
@@ -47,12 +47,12 @@ export default function TransactionsLoading() {
                     <div className="flex items-center gap-4">
                         <Skeleton className="h-9 w-9 rounded-full" />
                         <div className="grid gap-1">
-                            <p className="text-sm font-medium leading-none">
+                            <div className="text-sm font-medium leading-none">
                                 <Skeleton className="h-4 w-[120px] rounded" />
-                            </p>
-                            <p className="text-sm text-muted-foreground">
+                            </div>
+                            <div className="text-sm text-muted-foreground">
                                 <Skeleton className="h-4 w-[150px] rounded" />
-                            </p>
+                            </div>
                         </div>
                         <div className="ml-auto font-medium">
                             <Skeleton className="h-4 w-[50px] rounded" />

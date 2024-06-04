@@ -45,7 +45,7 @@ export default function LoginForm() {
         if (!!error) {
             toast.error(error);
         } else {
-            toast.success("Login successful");
+            toast.success("Login successful", { duration: 1000 });
             router.replace("/");
         }
     };

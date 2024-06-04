@@ -29,9 +29,9 @@ export default function DashboardLoading() {
                             <CardContent>
                                 <div className="text-2xl font-bold py-2">
                                     <Skeleton className="h-4 w-[150px] rounded " /></div>
-                                <p className="text-xs text-muted-foreground">
+                                <div className="text-xs text-muted-foreground">
                                     <Skeleton className="h-4 w-[150px] rounded" />
-                                </p>
+                                </div>
                             </CardContent>
                         </Card>
                         <Card x-chunk="dashboard-01-chunk-1">
@@ -44,9 +44,9 @@ export default function DashboardLoading() {
                             <CardContent>
                                 <div className="text-2xl font-bold  py-2">
                                     <Skeleton className="h-4 w-[150px] rounded " /></div>
-                                <p className="text-xs text-muted-foreground">
+                                <div className="text-xs text-muted-foreground">
                                     <Skeleton className="h-4 w-[150px] rounded" />
-                                </p>
+                                </div>
                             </CardContent>
                         </Card>
                         <Card x-chunk="dashboard-01-chunk-2">
@@ -57,9 +57,9 @@ export default function DashboardLoading() {
                             <CardContent>
                                 <div className="text-2xl font-bold py-2">
                                     <Skeleton className="h-4 w-[150px] rounded" /></div>
-                                <p className="text-xs text-muted-foreground">
+                                <div className="text-xs text-muted-foreground">
                                     <Skeleton className="h-4 w-[150px] rounded" />
-                                </p>
+                                </div>
                             </CardContent>
                         </Card>
                         <Card x-chunk="dashboard-01-chunk-3">
@@ -70,9 +70,9 @@ export default function DashboardLoading() {
                             <CardContent>
                                 <div className="text-2xl font-bold py-2">
                                     <Skeleton className="h-4 w-[150px] rounded " /></div>
-                                <p className="text-xs text-muted-foreground">
+                                <div className="text-xs text-muted-foreground">
                                     <Skeleton className="h-4 w-[150px] rounded" />
-                                </p>
+                                </div>
                             </CardContent>
                         </Card>
                     </div>
