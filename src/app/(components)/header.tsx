@@ -17,26 +17,37 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import clsx from 'clsx';
 import { CubeTransparentIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
+import { logOut } from "@/actions/auth.action"
+import { toast } from "sonner"
 
 
 export default function Header({ session }: any) {
     const pathname = usePathname();
+    const router = useRouter()
     const [currentUser, setCurrentUser] = useState<any>({})
     useEffect(() => {
         if (!!session.user) {
             setCurrentUser(session.user)
         }
     }, [session])
+
+    const handleLogout = async () => {
+        const loadingToast = toast.loading('Logging out');
+        await logOut()
+        toast.dismiss(loadingToast);
+        toast.success('Logged out successfully.', { duration: 1000 })
+        router.push("/login");
+    }
     return (
         <>
             <header className="sticky z-[5] top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
                 <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
                     <Link
-                        href="#"
+                        href="/"
                         className="flex items-center gap-2 text-lg font-semibold md:text-base"
                     >
                         <CubeTransparentIcon className="h-8 w-12" />
@@ -66,7 +77,7 @@ export default function Header({ session }: any) {
                     >
                         Orders
                     </Link>
-                    <Link
+                    {/* <Link
                         href="#"
                         className={clsx(
                             'transition-colors hover:text-foreground',
@@ -101,7 +112,7 @@ export default function Header({ session }: any) {
                         )}
                     >
                         Analytics
-                    </Link>
+                    </Link> */}
                     <Link
                         href="/settings"
                         className={clsx(
@@ -144,7 +155,7 @@ export default function Header({ session }: any) {
                             >
                                 Orders
                             </Link>
-                            <Link
+                            {/* <Link
                                 href="#"
                                 className="text-muted-foreground hover:text-foreground"
                             >
@@ -161,7 +172,7 @@ export default function Header({ session }: any) {
                                 className="text-muted-foreground hover:text-foreground"
                             >
                                 Analytics
-                            </Link>
+                            </Link> */}
                             <Link
                                 href="/settings"
                                 className="text-muted-foreground hover:text-foreground"
@@ -196,12 +207,12 @@ export default function Header({ session }: any) {
                             <DropdownMenuItem>Support</DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem>
-                                <Link
-                                    href="/login"
-                                    className="w-full"
+                                <div
+                                    onClick={handleLogout}
+                                    className="w-full cursor-pointer"
                                 >
                                     Logout
-                                </Link>
+                                </div>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>

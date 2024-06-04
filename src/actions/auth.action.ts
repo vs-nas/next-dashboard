@@ -1,6 +1,8 @@
 "use server";
-import { signIn, signOut } from "@/auth";
+import { auth, signIn, signOut } from "@/auth";
+import { API } from "@/lib/fetch";
 import { AuthError } from "next-auth";
+import * as storageService from "../helper/storage";
 
 
 export const Login = async ({
@@ -18,7 +20,7 @@ export const Login = async ({
     });
     if (!!res) {
       return { error: null, data: "Login success" };
-    }else{
+    } else {
       return { error: "Something went wrong", data: null };
     }
   } catch (error) {
@@ -29,19 +31,24 @@ export const Login = async ({
         default:
           return { error: "Something went wrong", data: null };
       }
-    }else{
+    } else {
       return { error: "Something went wrong", data: null };
     }
   }
 };
 
 
-// export async function logOut() {
-//   const sessionId = await storageService.loadString(storageKeys.SESSION_ID);
-//   const { error } = await API.POST("/auth/logout", { session_id: sessionId });
-//   await storageService.clearAll();
-//   await signOut();
-// }
+export async function logOut() {
+  const session = await auth()
+  console.log(session?.user?.sessionId)
+  if (session?.user?.sessionId) {
+    const { error } = await API.Post("/auth/logout", { session_id: session?.user?.sessionId });
+    if(!error){
+      await storageService.clearAll();
+      await signOut();
+    }
+  }
+}
 
 // export async function forgotPassword(
 //   data: z.infer<typeof ForgotPasswordSchema>
