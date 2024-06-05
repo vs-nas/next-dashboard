@@ -1,9 +1,8 @@
-import Image from "next/image"
-import Link from "next/link"
-
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Link from "next/link"
 
 export default function Dashboard() {
     return (
@@ -68,7 +67,7 @@ export default function Dashboard() {
                     width="1920"
                     height="1080"
                     priority
-                    className="h-[600px] px-10 w-full dark:brightness-[0.2] dark:grayscale"
+                    className="h-[600px] px-10 w-full"
                 />
 
             </div>

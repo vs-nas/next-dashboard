@@ -1,23 +1,22 @@
 'use client'
 
+import { Eye, EyeOff } from 'lucide-react';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import Link from "next/link"
+import { Login } from '@/actions/auth.action';
+import { LoginSchema } from '@/schemas/login-schema';
 import { Show } from '@/utils/show';
-// import { login } from '@/actions/auth.action';
 import { toast } from "sonner"
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 import { z } from "zod"
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LoginSchema } from '@/schemas/login-schema';
-import { Login } from '@/actions/auth.action';
-import { Label } from "@/components/ui/label"
-import Link from "next/link"
-import { Eye, EyeOff } from 'lucide-react';
 
 export default function LoginForm() {
     const router = useRouter();

@@ -22,14 +22,14 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-            <div className="hidden bg-muted lg:flex justify-center items-center">
+            <div className="hidden bg-muted dark:bg-slate-900 lg:flex justify-center items-center">
                 <Image
                     src="/undraw_reading.svg"
                     alt="Image"
                     width="1920"
                     height="1080"
                     priority
-                    className="h-[600px] px-10 w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                    className="h-[600px] px-10 w-full object-cover"
                 />
 
             </div>

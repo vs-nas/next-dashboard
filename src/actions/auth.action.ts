@@ -1,9 +1,11 @@
 "use server";
-import { auth, signIn, signOut } from "@/auth";
-import { API } from "@/lib/fetch";
-import { AuthError } from "next-auth";
+
 import * as storageService from "../helper/storage";
 
+import { auth, signIn, signOut } from "@/auth";
+
+import { API } from "@/lib/fetch";
+import { AuthError } from "next-auth";
 
 export const Login = async ({
   email,
@@ -40,7 +42,6 @@ export const Login = async ({
 
 export async function logOut() {
   const session = await auth()
-  console.log(session?.user?.sessionId)
   if (session?.user?.sessionId) {
     const { error } = await API.Post("/auth/logout", { session_id: session?.user?.sessionId });
     if(!error){
